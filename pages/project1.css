@@ -32,7 +32,8 @@ body, html {
 		text-align:left;
 		opacity:0.5;
 	}
-	.small{font-size:2em;}
+	.small{font-size:1.5em;
+		padding:8%;}
 	.content p {
 		font-size:3em;
 		color:white;

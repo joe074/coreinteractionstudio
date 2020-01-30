@@ -33,7 +33,8 @@ body, html {
 		opacity:0.5;
 	}
 	.small{font-size:1.5em;
-		padding:8%;}
+		padding:8%;
+		}
 	.content p {
 		font-size:3em;
 		color:white;
@@ -42,13 +43,16 @@ body, html {
 		width:50%;
 		transition:0.25s ease-in-out;
 	}
-	#one, #three {
+	#one, #three, #six {
 		background-color:#008cff;
 		color:#f2f2f2;
 	}
-	#two, #four {
+	
+	#two, #four, #five{
 		background-color:#0cd7e8;
+
 	}
+
 	a {
 		background-color:transparent;
 		padding:2%;

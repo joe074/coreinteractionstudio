@@ -1,0 +1,83 @@
+body, html {
+		font-family: 'Antic Didone', serif;
+		top:0;
+		left:0;
+		width:100%:;
+		margin:0%;
+	}
+	h1 {
+		font-size:1em;
+	}
+
+
+}
+	.sticky {
+		position:fixed;
+		margin:5%;
+		color:white;
+		border-bottom:1em solid gold;
+	}
+	
+	.exercise {
+		top:0;
+		left:0%;
+	}
+	.content {
+		padding:5%;
+		width:90%;
+		min-height:100vh;
+		max-height:fit-content;
+		text-align:right;
+	}
+	.content h1 {
+		font-size:2.5em;
+		font-weight:800;
+		text-align:left;
+		opacity:0.5;
+	}
+	.small {
+		font-size:1.5em;
+		padding:2%;
+		
+	}
+
+	.title{
+		font-size:2.5em;
+		padding:5%;
+	}
+	.content p {
+		font-size:1.5em;
+		color:white;
+		padding: 5%;
+	}
+	.content img {
+		width:50%;
+		transition:0.25s ease-in-out;
+	}
+	#one, #three, #six {
+		background-color:#008cff;
+		color:#f2f2f2;
+	}
+	
+	#two, #four, #five, #eight {
+		background-color:#0cd7e8;
+		
+
+	}
+
+	a {
+		background-color:transparent;
+		padding:2%;
+		border:0.5em solid gold;
+		text-decoration: none;
+		color:white;
+		transition:0.25s ease-in-out;
+		display: block;
+    	width: fit-content
+	}
+	a:hover{
+		background-color:gold;
+		color:#008cff;
+	}
+</style>
+<body>

@@ -11,7 +11,7 @@
 </body>
 <script type="text/javascript">
 
-d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/dataSheet1.csv')	.then(
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/datafinal.csv')	.then(
 	 function(data){
 	 	console.log(data)
 	 	viewData(data,'main')
@@ -26,7 +26,13 @@ function viewData(data, location_id) {
 // select the element that I will write data in
 el = document.querySelector('#'+location_id)
 // write everything as text to this location
-el.innerHTML = data [0][0]['popular dessert spots in nyc']
+
+
+data.forEach(function(item){
+h1= document.createElement('h1')
+h1.innterHTML=item['name']
+el.appendChild(h1)
+})
 }
 
 </script>

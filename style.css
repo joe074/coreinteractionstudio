@@ -23,8 +23,8 @@ h1{
 .section{
 	background-color: black;
 	color:white;
-	width:20em;
-	height:20em;
+	width:10em;
+	height:8em;
 	display: inline-flex;
 	align-items:center;
 	justify-content:center;

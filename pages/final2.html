@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+
+<div id='main'></div>
+
+</body>
+<script type="text/javascript">
+
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/dataSheet1.csv')	.then(
+	 function(data){
+	 	console.log(data)
+	 	viewData(data,'main')
+	 }
+	)
+.catch(function(error){
+	// catch error
+})
+
+// declare a function
+function viewData(data, location_id) {
+// select the element that I will write data in
+el = document.querySelector('#'+location_id)
+// write everything as text to this location
+el.innerHTML = data [0][0]['popular dessert spots in nyc']
+}
+
+</script>
+</html>

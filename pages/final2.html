@@ -4,19 +4,61 @@
 	<title></title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
-<body>
+<style type="text/css">
 
-<div id='main'></div>
+
+	body,html {
+		font-family:'Avenir', sans-serif
+	}
+
+.card {
+	background-color:;
+	width: 40%;
+	height: 40vh;
+	text-align:center;
+	display:inline-flex;
+	justify-content: center;
+	vertical-align:top;
+	padding: 10%, 0%;
+}
+
+.aligner{
+	max-width:auto;
+		text-align:center;
+}
+
+.card img {
+	width: 200%;
+		margin-top:-5%;
+		margin-left:-40%;
+}
+
+.mask {
+	margin-left:15%;
+	width:5rem;
+	height:5rem;
+	border-radius: 50%;
+	overflow:hidden;
+}
+
+.card h1{
+	font-size:2rem;
+}
+
+</style>
+<body>
+	<div id='main'></div>
 
 </body>
 <script type="text/javascript">
 
-d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/datafinal.csv')	.then(
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/finaldata.csv')	
+.then(
 	 function(data){
 	 	console.log(data)
 	 	viewData(data,'main')
 	 }
-	)
+	 )
 .catch(function(error){
 	// catch error
 })
@@ -24,14 +66,29 @@ d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/da
 // declare a function
 function viewData(data, location_id) {
 // select the element that I will write data in
-el = document.querySelector('#'+location_id)
-// write everything as text to this location
+	el = document.querySelector('#'+location_id)
+	// write everything as text to this location
 
 
-data.forEach(function(item){
-h1= document.createElement('h1')
-h1.innterHTML=item['name']
-el.appendChild(h1)
+	// iterate over each item and do something with its attributes
+	data.forEach(function(item){
+			div = document.createElement('div')
+			div.setAttribute('class','card')
+			div.classList.add(item['type'])
+			aligner = document.createElement('div')
+			aligner.setAttribute('class','aligner')
+			h1 = document.createElement('h1')
+			h1.innerHTML=item['name']
+			mask = document.createElement('div')
+			mask.setAttribute('class', 'mask')
+			img = document.createElement('img') 
+			img.src=item['cover_img']
+			mask.appendChild(img)
+			aligner.appendChild(mask)
+			aligner.appendChild(h1)
+			div.appendChild(aligner)
+			el.appendChild(div)
+
 })
 }
 

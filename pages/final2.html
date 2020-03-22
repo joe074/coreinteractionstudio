@@ -4,38 +4,10 @@
 	<title></title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
-
-<article class="menu">
-	<div class="about1">
-	<h3>About us</h3>
-</div>
-	<div class="about2">
-	<h3>Food Insider</h3>
-</div>
-	<div class="about3">
-	<h3>Contact</h3>
-</div>
-</div>
-</article>
-
-<span id="menu">
-	<a href="file:///Applications/coreinteractionstudio/pages/menu.html">
-	<h2>Menu</h2>
-	</a>
-	</span>
-<div align="center">
-	<h2 class="Title">
-	Dessert Spots in NYC
-	</div>
-</h2>
 <style type="text/css">
 
-
-	body,html {
+body,html {
 		font-family:'Avenir', sans-serif
-	}
-
-h1 { font-size:6rem;
 }
 
 h2 {
@@ -47,27 +19,16 @@ h3 {
 h4 {
   font-size:1.5rem;
 }
-h5 {
-  font-size:1;
-}
 
-.menu {
-	display: inline-block;
-	align-self: center;
+.aligner{
+	max-width:auto;
+		text-align:center;
 }
-.about { width:20%;
-	display: inline-flex;
- }
-
-.about2 {width:20%;
+.card img {
+	width: 80%;
 }
-.about3 {width:20%;
-}
-.menu {
-	width:15%;
-}
-.card {
-	background-color:pink;
+.card {	
+	background-color: pink;
 	width: 25%;
 	height: 40vh;
 	text-align:center;
@@ -77,70 +38,127 @@ h5 {
 	margin:2%;
 	display:inline-block;
 	margin-left:5rem;
-
 }
-
-
-
-.aligner{
-	max-width:auto;
-		text-align:center;
-
+.dessert {
+	background-color:yellow;
 }
-
-.card img {
-	width: 130px;
-	height: 195px;
-	text-align:center;
-	display:grid;
-	justify-content: center;
-	display:inline-block;
-	margin-left:5rem;
-}
-
 .mask {
-	margin-left:15%;
-	width:5rem;
-	height:5rem;
-	border-radius: 50%;
-	overflow:hidden;
+	margin:auto;
+	width:10rem;
+	height:10rem;
+	border-radius: 100%;
 }
 
 .card h1{
 	margin-top: 15rem;
-	font-size:1.5rem;
+	font-size:1rem;
 }
+
+#search form{
+	background-color: white;
+	width:30%;
+	margin:2%;
+	border:0.05 solid black;
+	display:flex;
+	align-items:center;
+	justify-content:left;
+	float:right;
+}
+
+#search_input {
+	font-weight:400;
+		font-size:0.8em;
+		width:90%;
+		background-color:transparent;
+		margin-top:0%;
+}
+#search button {
+		padding:0%;
+		float:right;
+		height:100%;
+		margin-top:0%;
+		font-size:2em;
+		background-color:transparent;
+		border:none;
+	}
+#search_submit i{
+		font-size:0.8em;
+		color:#CCCCCC;
+	}
+
+	input {
+		width:80%;
+		margin-top:2%;
+		padding:1rem;
+		background-color:pink;
+		border: 1em solid #1d1d1d
+	    border-radius: 1em; 
+	    border-style:none;
+	}
+
+
 
 </style>
 <body>
-	<div id='main'></div>
+	
+<!--main-->
+<div id="main"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="aligner">
+<div class="card">
+<!--create lightbox-->
+<div id='lightbox'>
+	<h1></h1>
+</div>
+</div>
+</div>
 
 </body>
 <script type="text/javascript">
 
-d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/finaldata.csv')	
-.then(
-	 function(data){
-	 	console.log(data)
-	 	viewData(data,'main')
-	 }
-	 )
-.catch(function(error){
-	// catch error
-})
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/data_final.csv')	
+	.then(
+		function(data){
+			console.log(data)
+			viewData(data,'main')
+			seeDetails(data)
+		}
+		)
+	.catch(function(error){
+		// catch error
+	})
 
 // declare a function
-function viewData(data, location_id) {
-// select the element that I will write data in
-	el = document.querySelector('#'+location_id)
-	// write everything as text to this location
-
+function viewData (data, location_id) {
+	// select the element that I will write the data in
+	el = document.querySelector('#'+location_id)  
 
 	// iterate over each item and do something with its attributes
-	data.forEach(function(item){
+	data.forEach(function(item,i){
+			// see index number
+			console.log(i)
 			div = document.createElement('div')
 			div.setAttribute('class','card')
 			div.classList.add(item['type'])
+
+			// see index number
+			div.setAttribute('value',i)
+
 			aligner = document.createElement('div')
 			aligner.setAttribute('class','aligner')
 			h1 = document.createElement('h1')
@@ -154,9 +172,25 @@ function viewData(data, location_id) {
 			aligner.appendChild(h1)
 			div.appendChild(aligner)
 			el.appendChild(div)
-
-})
+	})
 }
+
+function seeDetails(data){
+	items = document.querySelectorAll('.card')
+	items.forEach(function(item){
+		item.onclick=function(){
+			value = this.getAttribute('value')
+			showLightbox(data,value)
+		}
+	})
+}
+
+function showLightbox(data,index){
+	lightbox = document.querySelector('#lightbox')
+	h1 = lightbox.querySelector('h1')
+	h1.innerHTML=data[index]['name']
+}
+
 
 </script>
 </html>

@@ -10,8 +10,13 @@ body,html {
 		font-family:'Avenir', sans-serif
 }
 
-h2 {
+h1 {
+	font-family:'Avenir', sans-serif;
   font-size:3.375rem;
+ }
+h2 {
+	font-family:'Avenir', sans-serif;
+  font-size:1.5rem;
 }
 h3 {
   font-size:2.25rem;
@@ -25,33 +30,42 @@ h4 {
 		text-align:center;
 }
 .card img {
-	width: 80%;
+	width: 150%;
+	height: auto;
 }
+
 .card {	
-	background-color: pink;
-	width: 25%;
-	height: 40vh;
+	background-color: white;
+	width: 15rem;
+	height: 15rem;
 	text-align:center;
 	display:flex;
 	justify-content: center;
 	vertical-align:top;
-	margin:2%;
+	margin:2rem;
+	margin-top:6rem;
 	display:inline-block;
-	margin-left:5rem;
+	margin-left:3rem;
+	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
 }
-.dessert {
-	background-color:yellow;
+.menu {
+	display: inline-block;
+	width:15%;
 }
-.mask {
-	margin:auto;
-	width:10rem;
-	height:10rem;
-	border-radius: 100%;
 }
 
-.card h1{
-	margin-top: 15rem;
-	font-size:1rem;
+.card h2{
+	margin-top:1.5rem;
+	
+}
+
+.mask {
+	background-color:white;
+	width:100%;
+	height:15rem;
+	justify-content: center;
+	vertical-align:center;
+	overflow:hidden;
 }
 
 #search form{
@@ -100,38 +114,30 @@ h4 {
 
 </style>
 <body>
+<div class="menu"> Menu </div>
+<div align="center">
+
+<h2> Dessert Spots in Nyc</h2>
+</div>
 	
 <!--main-->
 <div id="main"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h2> Dessert Spots in Nyc</h2>
 
 <div class="aligner">
-<div class="card">
-<!--create lightbox-->
-<div id='lightbox'>
-	<h1></h1>
-</div>
-</div>
-</div>
 
+
+		</div>
+	</div>
+
+
+
+
+</div>
 </body>
 <script type="text/javascript">
 
-d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/data_final.csv')	
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/data%20-%20Sheet1.csv')	
 	.then(
 		function(data){
 			console.log(data)
@@ -149,48 +155,28 @@ function viewData (data, location_id) {
 	el = document.querySelector('#'+location_id)  
 
 	// iterate over each item and do something with its attributes
-	data.forEach(function(item,i){
-			// see index number
-			console.log(i)
+	data.forEach(function(item){
 			div = document.createElement('div')
 			div.setAttribute('class','card')
 			div.classList.add(item['type'])
 
-			// see index number
-			div.setAttribute('value',i)
-
 			aligner = document.createElement('div')
 			aligner.setAttribute('class','aligner')
-			h1 = document.createElement('h1')
-			h1.innerHTML=item['name']
+			h2 = document.createElement('h2')
+			h2.innerHTML=item['name']
 			mask = document.createElement('div')
 			mask.setAttribute('class', 'mask')
 			img = document.createElement('img') 
-			img.src=item['cover_img']
+			img.src=item['image']
 			mask.appendChild(img)
 			aligner.appendChild(mask)
-			aligner.appendChild(h1)
+			aligner.appendChild(h2)
 			div.appendChild(aligner)
 			el.appendChild(div)
 	})
 }
 
-function seeDetails(data){
-	items = document.querySelectorAll('.card')
-	items.forEach(function(item){
-		item.onclick=function(){
-			value = this.getAttribute('value')
-			showLightbox(data,value)
-		}
-	})
-}
-
-function showLightbox(data,index){
-	lightbox = document.querySelector('#lightbox')
-	h1 = lightbox.querySelector('h1')
-	h1.innerHTML=data[index]['name']
-}
-
+	
 
 </script>
 </html>

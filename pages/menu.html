@@ -1,38 +1,10 @@
 <!DOCTYPE html>
 <html>
-<html class="js wf-mreavemodern-n4-active wf-mreavemodern-n8-active wf-mreavesmodern-n7-active wf-active">
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <head>
 	<title>Menu</title>
 
 </head>
-<body>
-
-	<div class="container">
-<a href="final2.html" style="text-decoration: none">
-<div class="box1">	
-<h2> Home </h2> 
-</div></a>
-<a href="dessert.html">
-<div class="box2">
-<h2>Dining and Dessert</h2></div>
-</a>
-<a href="Cookies">
-<div class="box3">
-<h2>Cookies</h2>
-</div>
-</a>
-<a href="Pastry">
-<div class="box4">
-<h2>Icecream</h2>
-</div>
-</a>
-<div class="box5">
-<h2>Pastry</h2>
-</div>
-
-
-	</div>
 
 
 
@@ -115,11 +87,88 @@ h5 {
   font-size:1;
 }
 </style>
+<body>
+
+	<div class="container">
+<a href="final2.html" style="text-decoration: none">
+<div class="box1">	
+<h2> Home </h2> 
+</div></a>
+
+<a href="dining_dessert.html" style="text-decoration: none">
+<div class="box2">
+	<h2>Dining and Dessert</h2></div>
+</div></a>
+
+<a href="cookies.html" style="text-decoration: none">
+<div class="box3">
+<h2>Cookies</h2> 
+</div>
+</a>
+
+<a href="icecream.html" style="text-decoration: none">
+<div class="box4">
+<h2>Icecream</h2>
+</div>
+</a>
+<a href="pastry.html" style="text-decoration: none">
+<div class="box5">
+<h2>Pastry</h2>
+</div>
+</a>
+
+
+
+	</div>
+
+</body>
+
+</style>
 <script type="text/javascript">
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/icecream%20-%20Sheet1.csv')	
+	.then(
+		function(data){
+			console.log(data)
+			viewData(data,'main')
+			seeDetails(data)
+		}
+		)
+	.catch(function(error){
+		// catch error
+	})
+
+// declare a function
+function viewData (data, location_id) {
+	// select the element that I will write the data in
+	el = document.querySelector('#'+location_id)  
+
+	// iterate over each item and do something with its attributes
+	data.forEach(function(item){
+			div = document.createElement('div')
+			div.setAttribute('class','card')
+			div.classList.add(item['type'])
+
+			
+
+
+
+			aligner = document.createElement('div')
+			aligner.setAttribute('class','aligner')
+			h2 = document.createElement('h2')
+			h2.innerHTML=item['name']
+			mask = document.createElement('div')
+			mask.setAttribute('class', 'mask')			
+			img = document.createElement('img') 
+			img.src=item['image']
+			mask.appendChild(img)
+			aligner.appendChild(mask)
+			aligner.appendChild(h2)
+			div.appendChild(aligner)
+			el.appendChild(div)
+	})
+}
 
 
 
 </script>
-
-</body>
 </html>

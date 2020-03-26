@@ -30,7 +30,7 @@ h4 {
 		text-align:center;
 }
 .card img {
-	width: 100%;
+	width: 150%;
 	height: auto;
 }
 
@@ -42,17 +42,17 @@ h4 {
 	display:flex;
 	justify-content: center;
 	vertical-align:top;
-	margin:.5rem;
+	margin:2rem;
 	margin-top:6rem;
 	display:inline-block;
-	margin-left:8rem;
+	margin-left:3rem;
 	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
 }
 .menu {
 	display: inline-block;
 	width:15%;
 }
-
+}
 
 .card h2{
 	margin-top:1.5rem;
@@ -66,12 +66,6 @@ h4 {
 	justify-content: center;
 	vertical-align:center;
 	overflow:hidden;
-}
-
-#main {
-  display:grid;
-  grid-template-columns: repeat( 3, 1fr);
-  grid-gap: 4rem;
 }
 
 #search form{
@@ -118,8 +112,7 @@ h4 {
 </style>
 
 <body>
-	<a href="menu.html">
-	<div class="menu"> Menu </div></a>
+	<div class="menu"> Menu </div>
 	<div align="center">
 		<h2> Dessert Spots in Nyc</h2>
 	</div>
@@ -155,16 +148,12 @@ function viewData (data, location_id) {
 			div.setAttribute('class','card')
 			div.classList.add(item['type'])
 
-			
-
-
-
 			aligner = document.createElement('div')
 			aligner.setAttribute('class','aligner')
 			h2 = document.createElement('h2')
 			h2.innerHTML=item['name']
 			mask = document.createElement('div')
-			mask.setAttribute('class', 'mask')			
+			mask.setAttribute('class', 'mask')
 			img = document.createElement('img') 
 			img.src=item['image']
 			mask.appendChild(img)

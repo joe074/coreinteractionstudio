@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<style type="text/css">
+
+body,html {
+		font-family:'Avenir', sans-serif
+}
+
+h1 {
+	font-family:'Avenir', sans-serif;
+  font-size:3.375rem;
+ }
+h2 {
+	font-family:'Avenir', sans-serif;
+  font-size:1.5rem;
+}
+h3 {
+  font-size:2.25rem;
+}
+h4 {
+  font-size:1.5rem;
+}
+
+.aligner{
+	max-width:auto;
+		text-align:center;
+}
+.card img {
+	width: 100%;
+	height: auto;
+}
+
+.card {	
+	background-color: white;
+	width: 15rem;
+	height: 15rem;
+	margin:.5rem;
+	margin-top:6rem;
+	margin-left:8rem;
+	grid-gap: 50px;
+	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
+}
+.menu {
+	display: inline-block;
+	width:15%;
+}
+
+
+.card h2{
+	margin-top:1.5rem;
+	
+}
+
+.mask {
+	background-color:white;
+	width:100%;
+	height:15rem;
+	justify-content: center;
+	vertical-align:center;
+	overflow:hidden;
+}
+
+#main {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+}
+.bar {
+	background-color: pink
+	padding:3rem;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  padding:2rem;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+	input {
+		width:80%;
+		margin-top:2%;
+		padding:1rem;
+		background-color:pink;
+		border: 1em solid #1d1d1d
+	    border-radius: 1em; 
+	    border-style:none;
+	}
+</style>
+
+<body>
+	<div align="center">
+		<h2> Dessert Spots in Nyc</h2>
+	</div>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<div id="home">
+		<a href="final2.html"> Home
+	</div>
+		</a>
+		
+<div id="dining">
+		<a href="dining_dessert.html">Dining and Dessert</a>
+</div>
+<div id="cookies">
+		<a href="cookies.html">Cookies</a>
+</div>
+<div id="icecream">
+		<a href="icecream.html">Icecream</a>
+</div>
+<div id="pastry">
+		<a href="pastry.html">Pastry</a>
+</div>
+	</div>
+
+	<span style="font-size:1.5rem; font-family:Avenir;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+<!--main-->
+	<div id="main"></div>
+
+	<div class="aligner"></div>
+
+</body>
+
+<script type="text/javascript">
+d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/data%20-%20Sheet1.csv')	
+	.then(
+		function(data){
+			console.log(data)
+			viewData(data,'main')
+			seeDetails(data)
+		}
+		)
+	.catch(function(error){
+		// catch error
+	})
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+// declare a function
+function viewData (data, location_id) {
+	// select the element that I will write the data in
+	el = document.querySelector('#'+location_id)  
+
+	// iterate over each item and do something with its attributes
+	data.forEach(function(item){
+			div = document.createElement('div')
+			div.setAttribute('class','card')
+			div.classList.add(item['type'])
+
+			
+
+
+
+			aligner = document.createElement('div')
+			aligner.setAttribute('class','aligner')
+			h2 = document.createElement('h2')
+			h2.innerHTML=item['name']
+			mask = document.createElement('div')
+			mask.setAttribute('class', 'mask')			
+			img = document.createElement('img') 
+			img.src=item['image']
+			mask.appendChild(img)
+			aligner.appendChild(mask)
+			aligner.appendChild(h2)
+			div.appendChild(aligner)
+			el.appendChild(div)
+	})
+}
+
+	
+
+</script>
+</html>

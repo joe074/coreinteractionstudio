@@ -64,6 +64,33 @@ h4 {
 	overflow:hidden;
 }
 
+#lightbox img {
+	margin-left:10%;
+	top: 10em;
+	width:13em;
+	height:21.7em;
+		border: solid 1px #E29EDA;
+		overflow:hidden;
+		background-color:white;
+}
+
+#lightbox {
+	display:none;
+    position: fixed;
+    width: 70%;
+    height: 70vh;
+    background-color: white;
+    top: 10em;
+    left:7em;
+    border: 0.05em solid #E29EDA;
+    margin-left: 3.03%;
+}
+
+
+#lightbox {
+
+}
+
 #main {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -154,6 +181,9 @@ h4 {
 	<span style="font-size:1.5rem; font-family:Avenir;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 <!--main-->
 	<div id="main"></div>
+	</div>
+	<div id='lightbox'>
+	</div>
 
 	<div class="aligner"></div>
 
@@ -185,29 +215,40 @@ function viewData (data, location_id) {
 
 	// iterate over each item and do something with its attributes
 	data.forEach(function(item){
-			div = document.createElement('div')
-			div.setAttribute('class','card')
+			div = document.createElement('div')  //<div id = "main">
+			div.setAttribute('class','card')	//<div class="class">
 			div.classList.add(item['type'])
 
+
+
+				aligner = document.createElement('div')	//<div class="aligner">
+				aligner.setAttribute('class','aligner')
 			
 
+					mask = document.createElement('div')	//<div class="mask">
+					mask.setAttribute('class', 'mask')	
 
 
-			aligner = document.createElement('div')
-			aligner.setAttribute('class','aligner')
-			h2 = document.createElement('h2')
-			h2.innerHTML=item['name']
-			mask = document.createElement('div')
-			mask.setAttribute('class', 'mask')			
-			img = document.createElement('img') 
-			img.src=item['image']
-			mask.appendChild(img)
-			aligner.appendChild(mask)
-			aligner.appendChild(h2)
-			div.appendChild(aligner)
+						link = document.createElement('a')	//<a href="put your target page html">
+						link.setAttribute('href', 'detail.html?id='+item['id'])
+            
+							img = document.createElement('img')  //<img src="/images/myimage.jpg">
+							img.src=item['image']
+
+						h2 = document.createElement('h2')	//<h2>  InnerHtml </h2>
+						h2.innerHTML=item['name']
+
+						link.appendChild(img)		//close img tag
+						mask.appendChild(link)		//close a tag
+
+
+					aligner.appendChild(mask)		//close div tag for Mask
+					aligner.appendChild(h2)			//close div tag for H2
+				div.appendChild(aligner)			//close div tag for aligner
 			el.appendChild(div)
 	})
 }
+
 
 	
 

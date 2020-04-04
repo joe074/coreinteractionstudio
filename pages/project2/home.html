@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
+
 </head>
 <style type="text/css">
 
@@ -17,6 +18,7 @@ h1 {
 h2 {
 	font-family:'Avenir', sans-serif;
   font-size:1.5rem;
+  font-weight: normal;
 }
 h3 {
   font-size:2.25rem;
@@ -24,6 +26,7 @@ h3 {
 h4 {
   font-size:1.5rem;
 }
+
 
 .aligner{
 	max-width:auto;
@@ -64,38 +67,14 @@ h4 {
 	overflow:hidden;
 }
 
-#lightbox img {
-	margin-left:10%;
-	top: 10em;
-	width:13em;
-	height:21.7em;
-		border: solid 1px #E29EDA;
-		overflow:hidden;
-		background-color:white;
-}
 
-#lightbox {
-	display:none;
-    position: fixed;
-    width: 70%;
-    height: 70vh;
-    background-color: white;
-    top: 10em;
-    left:7em;
-    border: 0.05em solid #E29EDA;
-    margin-left: 3.03%;
-}
-
-
-#lightbox {
-
-}
 
 #main {
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4rem;
+  	display:grid;
+  	grid-template-columns: repeat(3, 1fr);
 }
+
+
 .bar {
 	background-color: pink
 	padding:3rem;
@@ -105,36 +84,62 @@ h4 {
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 0;
+   top: 0;
   left: 0;
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 0px;
   text-align:center;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 10px 8px 8px 32px;
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding:2rem;
-  color: #818181;
+  color: black;
   display: block;
   transition: 0.3s;
 
 }
+#home {
+	background-color: #C0E7FF;
+	padding:1.5rem;
+}
+
+#dining {
+	background-color: #FED7E5;
+	padding:1.5rem;
+}
+
+#cookies {
+	background-color: #B4E69D;
+	padding:1.5rem;
+
+}
+
+#icecream { 
+	background-color: #F8F8AA;
+	padding:1.5rem;
+
+}
+
+#pastry { 
+	background-color: #B686D8;
+	padding:1.5rem;
+}
+
 
 .sidenav a:hover{
-  color: #f1f1f1;
+  color: white;
 }
 
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
+  top: -20px;
   font-size: 36px;
-  margin-left: 50px;
+   margin-left: 20px;
 }
 
 @media screen and (max-height: 450px) {
@@ -154,39 +159,43 @@ h4 {
 </style>
 
 <body>
-	<div align="center">
-		<h2> Dessert Spots in Nyc</h2>
-	</div>
+	
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
 	<div id="home">
-		<a href="final2.html"> Home
+		<a href="final2.html"> Home </a>
 	</div>
-		</a>
-		
+		<br>
 <div id="dining">
 		<a href="dining_dessert.html">Dining and Dessert</a>
 </div>
+		<br>
 <div id="cookies">
 		<a href="cookies.html">Cookies</a>
 </div>
+		<br>
 <div id="icecream">
 		<a href="icecream.html">Icecream</a>
 </div>
+		<br>
 <div id="pastry">
 		<a href="pastry.html">Pastry</a>
 </div>
+		
 	</div>
 
 	<span style="font-size:1.5rem; font-family:Avenir;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+	<div align="center">
+		<h2> Dessert Spots in Nyc</h2>
+		</div>
 <!--main-->
+	
 	<div id="main"></div>
-	</div>
-	<div id='lightbox'>
-	</div>
 
 	<div class="aligner"></div>
-
+    </div>
+    
 </body>
 
 <script type="text/javascript">

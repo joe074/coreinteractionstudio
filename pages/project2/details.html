@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+	<div id="home">
+		<a href="final2.html"> Home </a>
+	</div>
+		<br>
+<div id="dining">
+		<a href="dining_dessert.html">Dining and Dessert</a>
+</div>
+		<br>
+<div id="cookies">
+		<a href="cookies.html">Cookies</a>
+</div>
+		<br>
+<div id="icecream">
+		<a href="icecream.html">Icecream</a>
+</div>
+		<br>
+<div id="pastry">
+		<a href="pastry.html">Pastry</a>
+</div>
+		
+	</div>
+<span style="font-size:1.5rem; font-family:Avenir;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+	<div align="center">
+		<h2> Dessert Spots in Nyc</h2>
+	</div>
+	
+		<div class="main">
+			<h2 class="title"> Alimama </h2>
+
+<div class="card">
+<img src="images/alimama.png">
+</div>
+<div class="address">
+	89A Bayard St, New York, NY 10013 
+</div>
+
+<div class="hour">
+	 <br> Mon-Thurs	11:30AM–9PM
+	 <br> Friday 11:30-10PM
+	 <br> Saturday 11:00-10PM
+	 <br> Sunday 11:00-9PM 
+</div>
+
+
+<div class="description">
+	<p>Welcome to Alimama Tea, where we blend the flavors of yesterday with today's best natural ingredients, guided by clean minds, calm hearts, and compassionate spirits.
+	<br>
+	From our mochi desserts to our cold brew teas, we handcraft all of our products with passion and purpose, to nourish your health with zero compromises on taste. Whether you are looking for something to cultivate your vegan sensibilities, sustain a gluten-free diet, or soothe that sweet tooth, you will find it here. </p>
+</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<style type="text/css">
+	
+
+html {
+	font-family: Avenir, sans-serif;
+}
+
+h2 {
+	font-family:'Avenir', sans-serif;
+  font-size:1.5rem;
+  font-weight: normal;
+}
+.main {
+	display:grid;
+	grid-template-columns: repeat( 6, 1fr);
+
+  grid-gap:2rem;
+}
+.card {
+	background-color: white;
+	width: 20rem;
+	height: 20rem;
+	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
+	float:left;
+	grid-column: 2/3;
+}
+
+.title {
+	font-size:2.5rem;
+	grid-column: 2/3;
+	margin-top:5rem;
+	margin-bottom:-1rem;
+}
+.card img {
+	width: 100%;
+	height: auto;
+}
+.address {
+	grid-column:3/5;
+	margin-left: 2rem;
+	font-size: 1.25rem;
+}
+.description {
+	box-sizing: border-box;
+	align-items: center;
+	padding:1rem;
+	font-size:.75rem;
+	grid-column: 3/5;
+	margin-top:-18em;
+	margin-left: 2rem;
+}
+.hour {
+	font-size: 1.75rem;
+	align-items: center;
+	padding:1rem;
+	font-size:.75rem;
+	grid-column: 3/5;
+	margin-top:-28em;
+	margin-left: 2rem;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+   top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 10px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 2rem;
+  padding:2rem;
+  color: black;
+  display: block;
+  transition: 0.3s;
+
+}
+#home {
+	background-color: #C0E7FF;
+	padding:1.5rem;
+}
+
+#dining {
+	background-color: #FED7E5;
+	padding:1.5rem;
+}
+
+#cookies {
+	background-color: #B4E69D;
+	padding:1.5rem;
+
+}
+
+#icecream { 
+	background-color: #F8F8AA;
+	padding:1.5rem;
+
+}
+
+#pastry { 
+	background-color: #B686D8;
+	padding:1.5rem;
+}
+
+
+.sidenav a:hover{
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+</style>
+
+<script type="text/javascript">
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+</script>
+

@@ -29,22 +29,24 @@
 </div>
 		
 	</div>
-<span style="font-size:1.5rem; font-family:Avenir;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+	<span style="font-size:2rem;padding:1.5px; font-family:Prata;float:center;margin-top:-5rem; margin-left:1rem;cursor:pointer" onclick="openNav()"> MENU </span>
 	<div align="center">
-		<h2> Dessert Spots in Nyc</h2>
+	<h2 class="title"> Dessert Spots in Nyc</h2>
 	</div>
-	
-		<div class="main">
-			<h2 class="title"> Alimama </h2>
+
+	<div class="main">
+	<h2 class="store-name"> Alimama </h2>
 
 <div class="card">
 <img src="images/alimama.png">
 </div>
 <div class="address">
-	89A Bayard St, New York, NY 10013 
+	<span class="location">
+	89A Bayard St, New York, NY 10013 </span>
 </div>
 
 <div class="hour">
+	<b>Hours</b>
 	 <br> Mon-Thurs	11:30AM–9PM
 	 <br> Friday 11:30-10PM
 	 <br> Saturday 11:00-10PM
@@ -58,6 +60,7 @@
 	From our mochi desserts to our cold brew teas, we handcraft all of our products with passion and purpose, to nourish your health with zero compromises on taste. Whether you are looking for something to cultivate your vegan sensibilities, sustain a gluten-free diet, or soothe that sweet tooth, you will find it here. </p>
 </div>
 
+<div class="reviews"></div>
 
 
 
@@ -75,16 +78,32 @@
 </html>
 
 <style type="text/css">
-	
+		@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
 html {
 	font-family: Avenir, sans-serif;
 }
 
+p {
+	font-size:1rem;
+}
 h2 {
 	font-family:'Avenir', sans-serif;
   font-size:1.5rem;
-  font-weight: normal;
+}
+.title {
+	font-family:'Prata', serif; 
+  font-size:2.75rem;
+  display:block;
+  margin-top:-1.64rem;
+}
+
+.store-name {
+	font-family: Avenir;
+	font-size:3rem;
+	grid-column: 1/2;
+	margin-left:15rem;
+	margin-bottom: -1rem;
 }
 .main {
 	display:grid;
@@ -97,42 +116,39 @@ h2 {
 	width: 20rem;
 	height: 20rem;
 	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
-	float:left;
-	grid-column: 2/3;
+	grid-column: 1/2;
+	margin-left:15rem;
 }
 
-.title {
-	font-size:2.5rem;
-	grid-column: 2/3;
-	margin-top:5rem;
-	margin-bottom:-1rem;
-}
 .card img {
 	width: 100%;
 	height: auto;
 }
+.location {
+	color:#B686D8;
+}
 .address {
-	grid-column:3/5;
+	grid-column:2/4;
+	grid-row:2/3;
 	margin-left: 2rem;
 	font-size: 1.25rem;
+	margin-left: 2rem;
 }
 .description {
 	box-sizing: border-box;
 	align-items: center;
-	padding:1rem;
-	font-size:.75rem;
-	grid-column: 3/5;
-	margin-top:-18em;
+	padding:.75rem;
+	grid-column: 2/5;
+	grid-row:2/3;
 	margin-left: 2rem;
+	margin-top:10rem;
 }
 .hour {
-	font-size: 1.75rem;
-	align-items: center;
-	padding:1rem;
-	font-size:.75rem;
-	grid-column: 3/5;
-	margin-top:-28em;
-	margin-left: 2rem;
+	font-size: 1rem;
+	grid-column:2/4;
+	grid-row:2/3;
+	margin-left: 3rem;
+	margin-top:3rem;
 }
 
 .sidenav {
@@ -159,6 +175,8 @@ h2 {
   transition: 0.3s;
 
 }
+
+
 #home {
 	background-color: #C0E7FF;
 	padding:1.5rem;
@@ -202,6 +220,14 @@ h2 {
 </style>
 
 <script type="text/javascript">
+	d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/pages/project2/finalsheet.csv')	
+	.then(
+		function(data){
+			console.log(data)
+			viewData(data,'main')
+			seeDetails(data)
+		}
+		)
 function openNav() {
   document.getElementById("mySidenav").style.width = "100%";
 }
@@ -209,7 +235,50 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+// declare a function
+function viewData (data, location_id) {
+	// select the element that I will write the data in
+	el = document.querySelector('#'+location_id)  
+
+data.forEach(function(item){
+			div = document.createElement('div')  //<div id = "main">
+			div.setAttribute('class','card')	//<div class="class">
+			div.classList.add(item['type'])
+	
+
+
+address = document.createElement('div')	//<div class="aligner">
+				aligner.setAttribute('class','address')
+
+address = document.createElement('div')	//<div class="aligner">
+				aligner.setAttribute('class','address')
+
+hours = document.createElement('div')	//<div class="aligner">
+				aligner.setAttribute('class','hours')
+
+description = document.createElement('div')	//<div class="aligner">
+				aligner.setAttribute('class','description')
+			
+link = document.createElement('a')	//<a href="put your target page html">
+						link.setAttribute('href', 'detail.html?id='+item['id'])
+img = document.createElement('img')  //<img src="/images/myimage.jpg">
+							img.src=item['image']
+			
+h2 = document.createElement('h2')	//<h2>  InnerHtml </h2>
+						h2.innerHTML=item['name']			
+
+
+link.appendChild(img)		//close img tag
+						mask.appendChild(link)		//close a tag
+
+
+					aligner.appendChild(mask)		//close div tag for Mask
+					aligner.appendChild(h2)			//close div tag for H2
+				div.appendChild(aligner)			//close div tag for aligner
+			el.appendChild(div)
+	})
+}
+
 
 
 </script>
-

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="scripts/query.js"></script>
+
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+	<div id="home">
+		<a href="home.html"> Home </a>
+	</div>
+		<br>
+<div id="dining">
+		<a href="dining_dessert.html">Dining and Dessert</a>
+</div>
+		<br>
+<div id="cookies">
+		<a href="cookies.html">Cookies</a>
+</div>
+		<br>
+<div id="icecream">
+		<a href="icecream.html">Icecream</a>
+</div>
+		<br>
+<div id="pastry">
+		<a href="pastry.html">Pastry</a>
+</div>
+		
+	</div>
+<br>
+	<span class="menutab" onclick="openNav()"> MENU </span></a>
+  <div align="center">
+	<h2 class="title"> Dessert Spots in Nyc</h2>
+  	</div>
+  <div class="line2"></div>
+  <br>
+  <a href="dining_dessert.html" style="text-decoration: none">
+  <div class="back">BACK</div>
+	</a>
+
+<div class="productGrid"></div>
+
+<div class="main">
+	<h2 class="itemname"> Alimama </h2>
+		<img id="productImage" width="200" src="">
+	
+	<div class="address">
+		<span class="location"></span>
+	</div>
+	<div class="dessert"></div>
+	<div class="description">
+	</div>
+
+	<div class="reviews">4.7</div>
+</div>
+
+</body>
+</html>
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
+
+body,html {
+		font-family:'Avenir', sans-serif;
+		color:#000;
+      margin: 0;
+      padding: 0;
+}
+
+h1 {
+	font-family:'Avenir', sans-serif;
+  font-size:3.375rem;
+ }
+h2 {
+	font-family:'Avenir', sans-serif;
+  font-size:1.5rem;
+  font-weight: normal;
+}
+.title {
+	font-family:'Prata', serif; 
+  font-size:2.5rem;
+  display:block;
+  margin-top: -3.25rem;
+
+}
+
+h3 {
+  font-size:2.25rem;
+}
+h4 {
+  font-size:1.5rem;}
+.store_name {
+font-family: Avenir;
+font-size:3rem;
+grid-column: 1/2;
+margin-left:15rem;
+margin-bottom: -1rem;
+}
+.main {
+display:grid;
+grid-template-columns: repeat( 5, 1fr);
+grid-gap:2rem;
+}
+.card {
+background-color: white;
+width: 20rem;
+height: 20rem;
+filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
+grid-column: 1/2;
+margin-left:15rem;
+}
+
+.itemname {
+	font-size:3rem;
+	font-family: 'prata', serif;
+	grid-column:1/5;
+	grid-row:1/2;
+	margin-top: 2rem;
+	margin-left:20rem;
+	margin-bottom: 2rem;
+	
+}
+
+#productImage {
+	width:20rem;
+	height:20rem;
+	grid-column:1/3;
+	grid-row:1/2;
+	margin-top: 8rem;
+	margin-left:20rem;
+	filter: drop-shadow(3px 6px 9px rgba(52, 52, 52, 0.161));
+}
+.location {
+color:#B686D8;
+
+}
+.address {
+grid-column:3/5;
+grid-row:1/2;
+margin-top:8rem;
+font-size: 1.5rem;
+margin-left: 2rem;
+}
+.description {
+align-items: center;
+grid-column: 3/5;
+grid-row:1/2;
+margin-left: 2rem;
+margin-top:12rem;
+font-size:2;
+}
+.hour {
+font-size: 1rem;
+grid-column:2/4;
+grid-row:2/3;
+margin-left: 3rem;
+margin-top:3rem;
+}
+.reviews {
+font-size: 1.5rem;
+grid-column:2/3;
+grid-row:3/4;
+margin-left: 5rem;
+margin-top:-2.5rem;
+}
+
+.line2 {
+  width:100%;
+  height:.75rem;
+  background-color:#FF80C7;
+  display:grid;
+  margin-top: -2rem;
+}
+#main {
+  	display:grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	margin:5rem;
+
+}
+
+#home {
+	background-color: #3399FF;
+	padding:1.8rem;
+	font-family: 'prata', serif;
+  
+}
+
+#dining {
+	background-color: #FF80C7;
+	padding:1.8rem;
+	font-family: 'prata', serif;
+}
+
+#cookies {
+	background-color: #73E670;
+	padding:1.8rem;
+	font-family: 'prata', serif;
+
+}
+
+#icecream { 
+	background-color: #FAF967;
+	padding:1.8rem;
+	font-family: 'prata', serif;
+
+}
+
+#pastry { 
+	background-color: #B686D8;
+	padding:1.8rem;
+	font-family: 'prata', serif;
+}
+
+.sidenav {
+  height: 100.7%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 3px;
+  text-align:center;
+  margin-top:-2rem;
+}
+
+.menutab {
+font-size:2rem; font-family:Prata; display: inline-flex; margin-top:.5rem;
+   margin-left:1.5rem;cursor:pointer;
+}
+
+.menutab:hover {
+ color: #FF80C7;
+}
+
+.back {
+	font-family: 'Prata', serif;
+	font-size:1.25rem;
+	display:inline-flex;
+	margin-left:2.75rem;
+	margin-top:0rem;
+}
+
+a:link { 
+  color:black;
+}
+a:visited {
+  color:black;
+}
+a:hover {
+	color: #FF80C7;
+  
+}
+.sidenav a {
+  padding: 10px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 2rem;
+  border: 1px ;
+  padding:2rem;
+  color: black;
+  display: block;
+  transition: 0.3s;
+
+}
+
+
+.sidenav a:hover{
+  color: white;
+}
+
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top:15px;
+  font-size: 36px;
+   margin-left: 20px;
+}
+
+
+</style>
+<script type="text/javascript">
+	function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+$("body").on("scroll", function () {
+    //set scroll position in session storage
+    sessionStorage.scrollPos = $(window).scrollTop();
+});
+var init = function () {
+    //get scroll position in session storage
+    $("body").scrollTop(sessionStorage.scrollPos || 0)
+};
+window.onload = init;
+
+
+</script>

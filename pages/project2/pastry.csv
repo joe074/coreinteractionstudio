@@ -1,14 +1,14 @@
-name,address,reviews,dessert,url,image
-Alimama,"89A Bayard St, New York, NY 10013",4.7,Pastry,https://www.alimamanyc.com/,images/alimama.png
-Bar Pa Tea," 85 Kenmare Street store #2, New York, NY 10012",4.4,Pastry,https://www.barpatea.com/,images/bar.png
-Cha Cha Matcha,"1158 BROADWAY
+id,name,address,reviews,dessert,url,image
+1,Alimama,"89A Bayard St, New York, NY 10013",4.7,Pastry,https://www.alimamanyc.com/,images/alimama.png
+3,Bar Pa Tea," 85 Kenmare Street store #2, New York, NY 10012",4.4,Pastry,https://www.barpatea.com/,images/bar.png
+4,Cha Cha Matcha,"1158 BROADWAY
 NEW YORK, NY 10011",4.3,Pastry,https://chachamatcha.com/,https://i.pinimg.com/originals/13/77/1a/13771a2fbfdd8a4d6c4bc08f769b5b25.jpg
-Eileen's Special Cheesecake,"17 Cleveland Pl, New York, NY 10012",4.6,Pastry,https://www.eileenscheesecake.com/,https://images.squarespace-cdn.com/content/v1/5d9ca4a434c0c7225f1df74b/1573222225123-ZU7JLBMTK05JQ5C68RHR/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/Cake_Sampler_White_1.jpg?format=1500w
-Flour shop,"177 Lafayette St, New York, NY 10013",4.3,Pastry,https://flourshop.com/#,https://i.pinimg.com/originals/af/ae/32/afae3213fb614089fa5c5b49aa65d0e7.jpg
-Magnolia Bakery,"401 Bleecker Street and W. 11th Street
+8,Eileen's Special Cheesecake,"17 Cleveland Pl, New York, NY 10012",4.6,Pastry,https://www.eileenscheesecake.com/,https://images.squarespace-cdn.com/content/v1/5d9ca4a434c0c7225f1df74b/1573222225123-ZU7JLBMTK05JQ5C68RHR/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/Cake_Sampler_White_1.jpg?format=1500w
+10,Flour shop,"177 Lafayette St, New York, NY 10013",4.3,Pastry,https://flourshop.com/#,https://i.pinimg.com/originals/af/ae/32/afae3213fb614089fa5c5b49aa65d0e7.jpg
+15,Magnolia Bakery,"401 Bleecker Street and W. 11th Street
 New York, NY 200 Columbus Avenue at 69th Street
 New York, NY",4,Pastry,https://www.magnoliabakery.com/,https://pbs.twimg.com/media/EOWovyCX0AAqQZ1.jpg
-Matcha n More,"177 Hester St New York, NY 10013",4.3,Pastry,https://www.matchanmore.com/,https://images.squarespace-cdn.com/content/v1/5a5d1b5d4c326d9d5c126860/1566671748692-S15PSDPU3BX91K2M75OG/ke17ZwdGBToddI8pDm48kHem505q6McQd8XRhQc9zkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxpEURhgSBEh9ILe0HKIG3CcOCklsxWwam3CdWF6Xw7jwVv5P97BEtB5XaVnmvMtTA/image-asset.jpeg
-Ray's Candy Store,"113 Avenue A, New York, NY 10009",4.7,Pastry,https://www.instagram.com/rayscandystore/?hl=en,https://media-cdn.tripadvisor.com/media/photo-s/0c/3f/a4/2c/ray-s-beignets.jpg
-Sweet Moment,"106 Mott St, New York, NY 10013",4.5,Pastry,https://www.instagram.com/sweetmomentnyc/?hl=en,images/sweetmoment.png
-The Little One,"150 E Broadway, New York, NY 10002",4.7,Pastry,https://www.instagram.com/thelittleonenyc/?hl=en,https://s3-media0.fl.yelpcdn.com/bphoto/paQ27uyraQaT-Xjjy85B6A/348s.jpg
+17,Matcha n More,"177 Hester St New York, NY 10013",4.3,Pastry,https://www.matchanmore.com/,https://images.squarespace-cdn.com/content/v1/5a5d1b5d4c326d9d5c126860/1566671748692-S15PSDPU3BX91K2M75OG/ke17ZwdGBToddI8pDm48kHem505q6McQd8XRhQc9zkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxpEURhgSBEh9ILe0HKIG3CcOCklsxWwam3CdWF6Xw7jwVv5P97BEtB5XaVnmvMtTA/image-asset.jpeg
+22,Ray's Candy Store,"113 Avenue A, New York, NY 10009",4.7,Pastry,https://www.instagram.com/rayscandystore/?hl=en,https://media-cdn.tripadvisor.com/media/photo-s/0c/3f/a4/2c/ray-s-beignets.jpg
+24,Sweet Moment,"106 Mott St, New York, NY 10013",4.5,Pastry,https://www.instagram.com/sweetmomentnyc/?hl=en,images/sweetmoment.png
+26,The Little One,"150 E Broadway, New York, NY 10002",4.7,Pastry,https://www.instagram.com/thelittleonenyc/?hl=en,https://s3-media0.fl.yelpcdn.com/bphoto/paQ27uyraQaT-Xjjy85B6A/348s.jpg

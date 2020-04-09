@@ -92,6 +92,8 @@ h2 {
 	font-family:'Avenir', sans-serif;
   font-size:1.5rem;
 }
+
+.g
 .title {
 	font-family:'Prata', serif; 
   font-size:2.75rem;
@@ -238,6 +240,18 @@ h2 {
 			console.log(data)
 			viewData(data,'main')
 			seeDetails(data)
+
+		// create your filters in the same .then function
+			// create all your filters
+			name = data.filter(function(d){
+				return d.address=='location' && d.foot=="description"
+			})	
+
+			
+
+
+
+
 		}
 		)
 function openNav() {

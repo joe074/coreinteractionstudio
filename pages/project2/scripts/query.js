@@ -19,7 +19,7 @@ $(document).ready(function(){
                     $(".itemname").text(rowData[1]);
                     $(".location").text(rowData[2]);    
                     $(".reviews").text(rowData[3]);   
-                    $(".dessert").text(rowData[4]);   
+                      
                     $("#productImage").attr("src", rowData[6]);
                     $(".description").text(rowData[7]);  
                    

@@ -107,7 +107,7 @@ element=document.querySelector('#scene')
 player = document.querySelector("lottie-player");
 controls = document.querySelectorAll('.progress div');
 progress = 1
-prefix = 'https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/pages/mobile_intro1/data/text.csv'
+prefix = 'https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/pages/mobile_intro1/data/data.csv'
 document.querySelector('#l1').style.backgroundColor="#666666";
 getAnim(prefix+'1.json',true);
 
@@ -206,7 +206,7 @@ function getAnim(path, autoplay_value){
 	target.appendChild(container)
 
 
-	d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/pages/mobile_intro1/data/text.csv')
+	d3.csv('https://raw.githubusercontent.com/joe074/coreinteractionstudio/master/pages/mobile_intro1/data/data.csv')
 		.then(function(data){
 			console.log(data);
 			if(progress==0){

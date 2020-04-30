@@ -4,35 +4,49 @@
 
 <body>
 <div align="center">
-<div class="title">
 <h2> Dessert Spots in NYC </h2> 
-</div>
 </div>
  
 <div id="ds-container">
 
  <div class="card">
- 	<
+ 	
 	<img src="../project2/images/alimama.png" style="max-width:100%;height:auto;">
 	<h3> Alimama </h3>
+</div>
+
+<div class="card">
 	<img src="../project2/images/ample.png" style="max-width:100%;height:auto;">
-	<h3> Ample Hills Creamery </h3>"
-	<img src="../project2/images/bar.png" style="max-width:100%;height:auto;">
+	<h3> Ample </h3>
+
+</div>
+
+<div class="card">
+<img src="../project2/images/bar.png" style="max-width:100%;height:auto;">
 	<h3> Bar Tea </h3>
+</div>
+
+<div class="card">
 	<img src="../project2/images/alimama.png" style="max-width:100%;height:auto;">
 	<h3> Cha Cha Matcha </h3>
+</div>
+
+<div class="card">
 	<img src="file:///Applications/coreinteractionstudio/pages/project2/images/levain.png" style="max-width:100%;height:auto;">
 	<h3> Dominique Ansel Bakery </h3>
+</div>
+	<div class="card">
 	<img src="../project2/images/minus.png" style="max-width:100%;height:auto;">
 	<h3> Minus 10 Icecream </h3>
+</div>
+<div class="card">
 	<img src="../project2/images/alimama.png" style="max-width:100%;height:auto;">
 	<h3> Eggloo </h3>
+</div>
+<div class="card">
 	<img src="../project2/images/alimama.png" style="max-width:100%;height:auto;">
 	<h3> Eileen's Special Cheesecake </h3>
 </div>
-
-
-
 </body>
 </html>
 
@@ -45,18 +59,21 @@ h2 {
 }
 
 #ds-container {
-	 display:grid;
+	display:grid;
   grid-template-columns: repeat( 2, 1fr);
-  grid-gap:2rem;
+  grid-template-rows: repeat (8, 1fr);
+  grid-gap:1rem;
+}
+
+.card {
+	margin:5px;
 }
 
 
-}
-.card {}
-
-
-h3 {
+.card h3 {
 	font-family: 'avenir', sans-serif;
+	text-align: center;
+
 }
 
 </style>

@@ -1,0 +1,24 @@
+.title {
+	float:left;
+}
+
+.image {
+	float:left;
+
+}
+
+#ds-container {
+	display: grid;
+	grid-template-columns: 
+}
+
+h3 {
+	font-family: Avenir;
+	font-weight:normal;
+}
+
+h2 {
+	font-family: Avenir;
+	font-weight: bold;
+	
+}

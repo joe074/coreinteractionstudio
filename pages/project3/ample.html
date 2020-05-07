@@ -1,0 +1,176 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="swiper.min.css">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+ <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+
+
+<body>
+<div align="center">
+<h2 class="title"> Dessert Spots in NYC </h2> 
+</div>
+ 
+
+
+<h3 class="name"> Ample Hills Creamery </h3><br>
+
+
+
+
+<div class="card">
+	<a href="ample.html" style="text-decoration: none">
+	<img src="images/ample.png" style="max-width:100%;height:auto;">
+	</a>
+
+</div>
+<div class="info">
+	<h3>
+	Mon-Sun : 12-10pm 
+	<br>
+	<span class="sub">141 8th avenue New York, NY 10011</span>
+	</h3>
+</div>
+
+
+
+
+
+
+<div id="description">
+It's knowing our goal is just to create something that will make people happy—pure and simple. Ample Hills is dedicated to making the world a happier place, and that doesn't stop at ice cream. We have made a habit of partnering with charities fiercely fighting for a better, safer world.
+</div>
+
+
+<h2 id = "btn1" class="circle">  <br>Add to saved places</h2>
+<div class="shape"> 
+<img src="saved.gif" style="width:75%; height:auto;">
+</div>
+<br>
+<br>
+<br>
+
+
+
+<div id="ds-container">
+
+	
+</div>
+
+
+</body>
+</html>
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
+	.title {
+	margin-top: 2%;
+	font-family: 'Prata', serif;
+	font-size:24px;
+	font-weight: normal;
+}
+
+#ds-container {
+	display:grid;
+  grid-template-columns: repeat( 2, 1fr);
+  grid-template-rows: repeat (8, 1fr);
+  grid-gap:10px;
+}
+
+.card {
+	margin:10px;
+	margin-top: -10%;
+}
+
+.circle {
+	width:80px;
+	height:80px;
+	border-radius: 50%;
+	border:none;
+	background-color: #CDAFD1;
+	margin-left:5%;
+	margin-top:5%;
+
+}
+
+
+#btn1 {
+	font-family:  'avenir', sans-serif;
+	font-weight: normal;
+	font-size:14px;
+	text-align: center;
+	padding:5px;
+
+}
+
+.card img {
+	 
+}
+
+.card h3 {
+	font-family: 'avenir', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	margin-top: 3%;
+}
+
+h3 {
+	font-family: 'avenir', sans-serif;
+	font-weight: normal;
+
+}
+.name {
+	font-family: 'avenir', sans-serif;
+	font-weight: bold;
+	font-size:22px;
+	margin-top:12%;
+	margin-left:3%;
+}
+
+#description {
+	margin: 3%;
+	font-family: 'avenir', sans-serif;
+	font-size:14px;
+}
+
+.sub {
+	color: #FF80C7;
+	font-size:14px;
+}
+
+.info {
+	margin-left:3%;
+	letter-spacing: 2px;
+}
+
+.shape {
+	opacity:0;
+	transition: opacity .5s;
+	margin-left: 45%;
+	margin-top:-32%;
+	display: block;
+}
+
+
+.showup {
+	opacity:1;
+}
+    
+</style>
+
+<script type="text/javascript">
+	
+$("#btn1").click(function(){
+	$(".shape").toggleClass("showup");
+	// $(".t1").css("opacity",1);
+	
+});
+
+
+
+
+
+
+
+</script>
